@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bharat Construction & Developers</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; }
+    a { text-decoration: none; color: inherit; }
+    img, video { max-width: 100%; display: block; }
+
+    header, section, footer { padding: 60px 20px; }
+    .container { max-width: 1200px; margin: 0 auto; }
+
+    header { background: #fff; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo img { height: 40px; width: auto; }
+    .menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+    ul.nav-links { list-style: none; display: flex; gap: 20px; align-items: center; }
+    ul.nav-links li a { padding: 8px 12px; transition: background .3s; }
+    ul.nav-links li a:hover { background: #f0f0f0; border-radius: 4px; }
+
+    .hero { position: relative; height: 80vh; overflow: hidden; }
+    .hero video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero .overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.4); }
+    .hero .content { position: relative; z-index: 2; color: #fff; text-align: center; top:50%; transform: translateY(-50%); opacity: 0; transition: opacity 1s ease-in; }
+    .hero.visible .content { opacity: 1; }
+    .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+    .hero h2 { font-size: 1.5rem; margin-bottom: 20px; }
+    .btn { background: #ff7f50; color: #fff; padding: 12px 30px; border: none; border-radius: 4px; cursor: pointer; }
+
+    .about, .services, .projects, .blog, .testimonials, .contact { background: #fafafa; }
+    .about .text, .services .grid, .projects .grid, .blog .grid, .testimonials .cards { display: flex; flex-wrap: wrap; gap: 20px; opacity: 0; transform: translateY(20px); transition: opacity .6s ease-out, transform .6s ease-out; }
+    .reveal { opacity: 1 !important; transform: translateY(0) !important; }
+    .about .text { flex: 1; }
+    .services .grid > div, .projects .grid > div, .blog .grid > div, .testimonials .cards > div { flex: 1 1 calc(33.333% - 20px); background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    .services .icon { font-size: 2rem; margin-bottom: 10px; }
+    .testimonials .cards img { width: 50px; height: 50px; border-radius: 50%; margin-right: 10px; }
+    .testimonial { display: flex; align-items: center; }
+
+    .contact form { display: grid; gap: 15px; }
+    .contact input, .contact textarea, .contact button { padding: 12px; border: 1px solid #ccc; border-radius: 4px; width: 100%; }
+    .contact button { background: #005f99; color: #fff; border: none; cursor: pointer; }
+
+    footer { background: #333; color: #fff; text-align: center; font-size: 0.9rem; }
+    .socials a { margin: 0 10px; color: #fff; }
+
+    @media(max-width: 768px) {
+      .menu-toggle { display: block; }
+      ul.nav-links { position: absolute; top: 60px; right: 0; background: #fff; flex-direction: column; width: 200px; display: none; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+      ul.nav-links.open { display: flex; }
+      ul.nav-links li { margin: 10px 0; text-align: center; }
+      .services .grid > div, .projects .grid > div, .blog .grid > div, .testimonials .cards > div { flex: 1 1 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo"><img src="C:\Users\win 10\Documents\web\Project 4.png" alt="Bharat Construction & Devlopers Logo"></div>
+        <div class="menu-toggle">☰</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <video autoplay muted loop>
+      <source src="path/to/your-video.mp4" type="video/mp4">
+      <img src="path/to/hero-image.jpg" alt="Construction site">
+    </video>
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Building the Future, One Brick at a Time</h1>
+      <h2>Bharat Construction & Developers</h2>
+      <button class="btn" onclick="location.href='#contact'">Request a Quote</button>
+    </div>
+  </section>
+
+  <section id="about" class="about container">
+    <div class="text reveal">
+      <h2>About Bharat Construction & Developers</h2>
+      <p>Bharat Construction & Developers is a leading civil construction firm committed to delivering high-quality projects across India.</p>
+    </div>
+  </section>
+
+  <section id="services" class="services container">
+    <h2 class="reveal">Our Services</h2>
+    <div class="grid reveal">
+      <div><div class="icon">🏠</div><h3>Residential Construction</h3><p>We build comfortable homes with excellence.</p></div>
+      <div><div class="icon">🏢</div><h3>Commercial Projects</h3><p>Innovative solutions for offices & retail spaces.</p></div>
+      <div><div class="icon">🛠️</div><h3>Renovation & Interiors</h3><p>Transforming spaces with creative designs.</p></div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects container">
+    <h2 class="reveal">Our Projects</h2>
+    <div class="grid reveal">
+      <div><img src="C:\Users\win 10\Documents\web\Project 1.jpg"><p>Residential Complex, Mumbai</p></div>
+      <div><img src="C:\Users\win 10\Documents\web\Project 2.jpeg" alt="Project 2"<p>Home, Moradabad</p></div>
+      <div><img src="C:\Users\win 10\Documents\web\Project 3.jpeg" alt="Project 3"><p>Office Building, Delhi</p></div>
+    </div>
+  </section>
+
+  <section id="blog" class="blog container">
+    <h2 class="reveal">Latest News & Articles</h2>
+    <div class="grid reveal">
+      <div><h3>Construction Trends 2025</h3><p>Explore the latest sustainable building materials...</p></div>
+      <div><h3>Project Spotlight</h3><p>Case study: Modern office tower in Delhi...</p></div>
+      <div><h3>Tips for Homeowners</h3><p>How to plan your renovation budget efficiently...</p></div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials container">
+    <h2 class="reveal">What Our Clients Say</h2>
+    <div class="cards reveal">
+      <div class="testimonial"><img src="path/to/client1.jpg" alt="Client 1"><div><p>"Bharat Construction & Developers delivered our dream home on time and within budget."</p><small>- Rahul Sharma</small></div></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact container">
+    <h2 class="reveal">Contact Us</h2>
+    <form action="mailto:info@bharatconstructor.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="map reveal">
+      <iframe src="https://www.google.com/maps?q=Moradabad,+India&output=embed" width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Bharat Construction & Developers. All Rights Reserved.</p>
+    <div class="socials">
+      <a href="#">Facebook</a> | <a href="#">LinkedIn</a> | <a href="#">Instagram</a>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('ul.nav-links');
+    toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    const options = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('reveal');
+      });
+    }, options);
+    document.querySelectorAll('.about .text, .services .grid, .projects .grid, .blog .grid, .testimonials .cards, .contact .reveal').forEach(el => observer.observe(el));
+
+    window.addEventListener('load', () => document.querySelector('.hero').classList.add('visible'));
+  </script>
+</body>
+</html>
